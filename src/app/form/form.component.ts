@@ -31,8 +31,8 @@ export class FormComponent implements OnInit {
     this.imgUrl = event.target.value;
   }
 
-  getEmploye() {
-    this.employeService.getEmployee()
+  getEmploye(id) {
+    this.employeService.getEmployee(id)
       .subscribe(response => {
         this.employe = response;
       });

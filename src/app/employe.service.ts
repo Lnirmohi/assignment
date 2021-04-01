@@ -13,8 +13,8 @@ export class EmployeService {
 
   constructor(private http: HttpClient) {}
 
-  getEmployee() {
-    this.http.get('https://60644181f0919700177854b2.mockapi.io/mockdemo/employee');
+  getEmployee(id) {
+    this.http.get('https://60644181f0919700177854b2.mockapi.io/mockdemo/employee' + id);
   }
 
   addEmployee(employe: Employe) {

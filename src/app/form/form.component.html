@@ -1,1 +1,40 @@
-<p>form works!</p>
+<div class="form-container">
+  <form [formGroup]="formGroup" class="form" (ngSubmit)="onSubmit(formGroup)">
+    <label for="fullname">
+      <p>Name</p>
+      <input formControlName="fullname" type="text" required>
+    </label>
+
+    <label for="email">
+      <p>Email</p>
+      <input formControlName="email" type="email" required>
+    </label>
+
+    <label for="phoneNumber">
+      <p>Phone Number</p>
+      <input formControlName="phoneNumber" type="tel" required>
+    </label>
+
+    <label for="address">
+      <p>Address</p>
+      <input formControlName="address" type="text" required>
+    </label>
+
+    <label for="dob">
+      <p>Date of Birth</p>
+      <input formControlName="dob" type="date" required>
+    </label>
+
+    <label for="avatar">
+      <p>Avatar URL</p>
+      <input id="image-url" (input)="onUrlInput($event)" formControlName="avatar" type="url" required>
+    </label>
+
+    <div class="img-preview">
+        <p>Image Preview</p>
+        <img *ngIf="imgUrl.length > 0" id="img-preview" [src]="imgUrl" alt="">
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+</div>

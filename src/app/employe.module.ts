@@ -1,5 +1,4 @@
 export class Employe {
-    id: number;
     fullName: string;
     avatar: string;
     address: string;

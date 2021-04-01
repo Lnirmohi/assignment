@@ -1,4 +1,3 @@
-import { Employe } from './../employe.module';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeService } from '../employe.service';
@@ -32,12 +31,22 @@ export class FormComponent implements OnInit {
 
   onSubmit(employeeData: FormGroup) {
 
-    console.log(employeeData);
-    // this.employeService.addEmployee(
-    //   {
+    const fullName = employeeData.value.fullname;
+    const avatar = employeeData.value.avatar;
+    const address = employeeData.value.address;
+    const phoneNumber = employeeData.value.phoneNumber;
+    const dob = employeeData.value.dob;
+    const email = employeeData.value.email;
 
-    //   }
-    // );
+    this.employeService.addEmployee(
+      {
+        fullName,
+        avatar,
+        address,
+        phoneNumber,
+        dob,
+        email,
+      }
+    );
   }
-
 }

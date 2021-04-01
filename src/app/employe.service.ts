@@ -14,11 +14,11 @@ export class EmployeService {
   constructor(private http: HttpClient) {}
 
   getEmployee(id) {
-    this.http.get('https://60644181f0919700177854b2.mockapi.io/mockdemo/employee/' + id);
+    return this.http.get('https://60644181f0919700177854b2.mockapi.io/mockdemo/employee/' + id);
   }
 
   addEmployee(employe: Employe) {
-    this.http.post(
+    return this.http.post(
       'https://60644181f0919700177854b2.mockapi.io/mockdemo/employee',
       employe
     );

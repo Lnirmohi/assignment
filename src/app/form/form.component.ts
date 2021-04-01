@@ -33,7 +33,7 @@ export class FormComponent implements OnInit {
 
   getEmploye(id) {
     this.employeService.getEmployee(id)
-      .subscribe(response => {
+    .subscribe(response => {
         this.employe = response;
       });
   }

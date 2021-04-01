@@ -1,3 +1,4 @@
+import { Employe } from './../employe.module';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeService } from '../employe.service';
@@ -13,6 +14,7 @@ export class FormComponent implements OnInit {
 
   formGroup: FormGroup;
   imgUrl = '';
+  employe: any;
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
@@ -27,6 +29,13 @@ export class FormComponent implements OnInit {
 
   onUrlInput(event) {
     this.imgUrl = event.target.value;
+  }
+
+  getEmploye() {
+    this.employeService.getEmployee()
+      .subscribe(response => {
+        this.employe = response;
+      });
   }
 
   onSubmit(employeeData: FormGroup) {
